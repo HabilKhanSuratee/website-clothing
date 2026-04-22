@@ -48,4 +48,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+], { basename: '/website-clothing' });
