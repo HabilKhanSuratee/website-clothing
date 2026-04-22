@@ -41,25 +41,27 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* ─── Brand palette — edit here to retheme the whole site ─── */
-  --brand-bg:                 #fafaf9; /* stone-50  */
-  --brand-bg-alt:             #f5f5f4; /* stone-100 */
-  --brand-bg-card:            #ffffff; /* white     */
-  --brand-bg-dark:            #292524; /* stone-800 */
-  --brand-bg-dark-hover:      #44403c; /* stone-700 */
-  --brand-thumbnail:          #e7e5e4; /* stone-200 */
-  --brand-text:               #1c1917; /* stone-900 */
-  --brand-text-strong:        #44403c; /* stone-700 */
-  --brand-text-muted:         #57534e; /* stone-600 */
-  --brand-text-subtle:        #78716c; /* stone-500 */
-  --brand-text-faint:         #a8a29e; /* stone-400 */
-  --brand-text-on-dark:       #fafaf9; /* stone-50  */
-  --brand-text-on-dark-muted: #d6d3d1; /* stone-300 */
-  --brand-border:             #e7e5e4; /* stone-200 */
-  --brand-border-mid:         #d6d3d1; /* stone-300 */
-  --brand-border-strong:      #a8a29e; /* stone-400 */
-  --brand-btn:                #1c1917; /* stone-900 */
-  --brand-btn-hover:          #292524; /* stone-800 */
-  --brand-btn-text:           #fafaf9; /* stone-50  */
+  --brand-bg:                 #F9F6F0; /* warm cream          */
+  --brand-bg-alt:             #F0EAE0; /* deeper cream        */
+  --brand-bg-card:            #FFFFFF; /* white card          */
+  --brand-bg-dark:            #2C241B; /* espresso CTA        */
+  --brand-bg-dark-hover:      #3D3229; /* espresso hover      */
+  --brand-thumbnail:          #E8E2D8; /* warm placeholder    */
+  --brand-text:               #2C241B; /* espresso primary    */
+  --brand-text-strong:        #4A3C30; /* medium brown        */
+  --brand-text-muted:         #7A6B5D; /* warm mid-brown      */
+  --brand-text-subtle:        #9A8B7D; /* lighter brown       */
+  --brand-text-faint:         #B8AFA3; /* near taupe          */
+  --brand-text-on-dark:       #F9F6F0; /* cream on espresso   */
+  --brand-text-on-dark-muted: #C4B8A8; /* muted cream         */
+  --brand-border:             #E8E2D8; /* light warm border   */
+  --brand-border-mid:         #D4CEC0; /* taupe               */
+  --brand-border-strong:      #B8AFA3; /* strong taupe        */
+  --brand-btn:                #2C241B; /* espresso button     */
+  --brand-btn-hover:          #3D3229; /* espresso hover      */
+  --brand-btn-text:           #F9F6F0; /* cream on button     */
+  --brand-header-bg:          #2C241B; /* espresso header     */
+  --brand-header-text:        #F9F6F0; /* cream header text   */
 }
 
 .dark {
@@ -118,6 +120,8 @@
   --brand-btn:                #ffffff;
   --brand-btn-hover:          #e6e6e6;
   --brand-btn-text:           #000000;
+  --brand-header-bg:          #000000; /* black header in dark mode  */
+  --brand-header-text:        #ffffff;
 }
 
 @theme inline {
@@ -178,6 +182,8 @@
   --color-brand-btn:                var(--brand-btn);
   --color-brand-btn-hover:          var(--brand-btn-hover);
   --color-brand-btn-text:           var(--brand-btn-text);
+  --color-brand-header-bg:          var(--brand-header-bg);
+  --color-brand-header-text:        var(--brand-header-text);
 }
 
 @layer base {

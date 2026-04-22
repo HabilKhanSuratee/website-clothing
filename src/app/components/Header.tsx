@@ -37,7 +37,7 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-header-bg/95 text-brand-header-text backdrop-blur-md">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -55,7 +55,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map(({ to, label }) => (
-              <Link key={to} to={to} className="text-sm tracking-wide hover:text-brand-text-subtle transition-colors">
+              <Link key={to} to={to} className="text-sm tracking-wide hover:text-brand-text-on-dark-muted transition-colors">
                 {label}
               </Link>
             ))}
@@ -63,28 +63,28 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-5">
-            <button className="hover:text-brand-text-subtle transition-colors">
+            <button className="hover:text-brand-text-on-dark-muted transition-colors">
               <Search size={18} />
             </button>
-            <button className="hover:text-brand-text-subtle transition-colors">
+            <button className="hover:text-brand-text-on-dark-muted transition-colors">
               <User size={18} />
             </button>
-            <button className="hover:text-brand-text-subtle transition-colors">
+            <button className="hover:text-brand-text-on-dark-muted transition-colors">
               <Heart size={18} />
             </button>
-            <button className="hover:text-brand-text-subtle transition-colors">
+            <button className="hover:text-brand-text-on-dark-muted transition-colors">
               <ShoppingBag size={18} />
             </button>
             <button
               onClick={() => setDark(d => !d)}
-              className="hover:text-brand-text-subtle transition-colors"
+              className="hover:text-brand-text-on-dark-muted transition-colors"
               aria-label="Toggle dark mode"
             >
               {dark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             {/* Hamburger — mobile only */}
             <button
-              className="md:hidden hover:text-brand-text-subtle transition-colors"
+              className="md:hidden hover:text-brand-text-on-dark-muted transition-colors"
               onClick={() => setMenuOpen((o) => !o)}
               aria-label="Toggle menu"
             >
@@ -102,13 +102,13 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-brand-bg border-t border-brand-border px-6 py-4 flex flex-col gap-4"
+            className="md:hidden bg-brand-header-bg px-6 py-4 flex flex-col gap-4"
           >
             {navLinks.map(({ to, label }) => (
               <button
                 key={to}
                 onClick={() => handleMobileNav(to)}
-                className="text-left text-sm tracking-wide hover:text-brand-text-subtle transition-colors py-1"
+                className="text-left text-sm tracking-wide hover:text-brand-text-on-dark-muted transition-colors py-1"
               >
                 {label}
               </button>
