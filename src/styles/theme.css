@@ -39,6 +39,29 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* ─── Brand palette — edit here to retheme the whole site ─── */
+  --brand-bg:                 #F9F6F0; /* warm cream          */
+  --brand-bg-alt:             #F0EAE0; /* deeper cream        */
+  --brand-bg-card:            #FFFFFF; /* white card          */
+  --brand-bg-dark:            #2C241B; /* espresso CTA        */
+  --brand-bg-dark-hover:      #3D3229; /* espresso hover      */
+  --brand-thumbnail:          #E8E2D8; /* warm placeholder    */
+  --brand-text:               #2C241B; /* espresso primary    */
+  --brand-text-strong:        #4A3C30; /* medium brown        */
+  --brand-text-muted:         #7A6B5D; /* warm mid-brown      */
+  --brand-text-subtle:        #9A8B7D; /* lighter brown       */
+  --brand-text-faint:         #B8AFA3; /* near taupe          */
+  --brand-text-on-dark:       #F9F6F0; /* cream on espresso   */
+  --brand-text-on-dark-muted: #C4B8A8; /* muted cream         */
+  --brand-border:             #E8E2D8; /* light warm border   */
+  --brand-border-mid:         #D4CEC0; /* taupe               */
+  --brand-border-strong:      #B8AFA3; /* strong taupe        */
+  --brand-btn:                #2C241B; /* espresso button     */
+  --brand-btn-hover:          #3D3229; /* espresso hover      */
+  --brand-btn-text:           #F9F6F0; /* cream on button     */
+  --brand-header-bg:          #2C241B; /* espresso header     */
+  --brand-header-text:        #F9F6F0; /* cream header text   */
 }
 
 .dark {
@@ -76,6 +99,29 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+
+  /* Brand palette overrides for dark mode */
+  --brand-bg:                 #000000;
+  --brand-bg-alt:             #09090b;
+  --brand-bg-card:            #0d0d0d;
+  --brand-bg-dark:            #ffffff;
+  --brand-bg-dark-hover:      #e6e6e6;
+  --brand-thumbnail:          #18181b;
+  --brand-text:               #ffffff;
+  --brand-text-strong:        #b3b3b3;
+  --brand-text-muted:         #999999;
+  --brand-text-subtle:        #808080;
+  --brand-text-faint:         #666666;
+  --brand-text-on-dark:       #000000;
+  --brand-text-on-dark-muted: #666666;
+  --brand-border:             #1a1a1a;
+  --brand-border-mid:         #333333;
+  --brand-border-strong:      #4d4d4d;
+  --brand-btn:                #ffffff;
+  --brand-btn-hover:          #e6e6e6;
+  --brand-btn-text:           #000000;
+  --brand-header-bg:          #000000; /* black header in dark mode  */
+  --brand-header-text:        #ffffff;
 }
 
 @theme inline {
@@ -117,6 +163,27 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-bg:                 var(--brand-bg);
+  --color-brand-bg-alt:             var(--brand-bg-alt);
+  --color-brand-bg-card:            var(--brand-bg-card);
+  --color-brand-bg-dark:            var(--brand-bg-dark);
+  --color-brand-bg-dark-hover:      var(--brand-bg-dark-hover);
+  --color-brand-thumbnail:          var(--brand-thumbnail);
+  --color-brand-text:               var(--brand-text);
+  --color-brand-text-strong:        var(--brand-text-strong);
+  --color-brand-text-muted:         var(--brand-text-muted);
+  --color-brand-text-subtle:        var(--brand-text-subtle);
+  --color-brand-text-faint:         var(--brand-text-faint);
+  --color-brand-text-on-dark:       var(--brand-text-on-dark);
+  --color-brand-text-on-dark-muted: var(--brand-text-on-dark-muted);
+  --color-brand-border:             var(--brand-border);
+  --color-brand-border-mid:         var(--brand-border-mid);
+  --color-brand-border-strong:      var(--brand-border-strong);
+  --color-brand-btn:                var(--brand-btn);
+  --color-brand-btn-hover:          var(--brand-btn-hover);
+  --color-brand-btn-text:           var(--brand-btn-text);
+  --color-brand-header-bg:          var(--brand-header-bg);
+  --color-brand-header-text:        var(--brand-header-text);
 }
 
 @layer base {

@@ -31,7 +31,7 @@ export function ArtisanProfile() {
               alt={artisan.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-transparent" />
           </motion.div>
         </div>
 
@@ -43,7 +43,7 @@ export function ArtisanProfile() {
             className="max-w-3xl"
           >
             <p className="text-white/60 text-sm tracking-wide mb-4">MASTER ARTISAN</p>
-            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight">
+            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight text-white">
               {artisan.name}
             </h1>
             <div className="flex gap-8 text-lg mb-8">
@@ -77,7 +77,7 @@ export function ArtisanProfile() {
               <h2 className="text-4xl lg:text-5xl mb-8 tracking-tight">
                 About {artisan.name.split(' ')[0]}
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed">
+              <p className="text-brand-text-strong text-lg leading-relaxed">
                 {artisan.bio}
               </p>
             </motion.div>
@@ -91,22 +91,22 @@ export function ArtisanProfile() {
             >
               <div>
                 <h3 className="text-2xl mb-4 tracking-tight">Craftsmanship Details</h3>
-                <div className="space-y-4 text-white/60">
-                  <div className="flex justify-between py-3 border-b border-white/10">
+                <div className="space-y-4 text-brand-text-muted">
+                  <div className="flex justify-between py-3 border-b border-brand-border">
                     <span>Years of Experience</span>
-                    <span className="text-white">{new Date().getFullYear() - artisan.establishedYear}+ years</span>
+                    <span className="text-brand-text">{new Date().getFullYear() - artisan.establishedYear}+ years</span>
                   </div>
-                  <div className="flex justify-between py-3 border-b border-white/10">
+                  <div className="flex justify-between py-3 border-b border-brand-border">
                     <span>Specialty</span>
-                    <span className="text-white">{artisan.specialty}</span>
+                    <span className="text-brand-text">{artisan.specialty}</span>
                   </div>
-                  <div className="flex justify-between py-3 border-b border-white/10">
+                  <div className="flex justify-between py-3 border-b border-brand-border">
                     <span>Collections</span>
-                    <span className="text-white">{artisan.collections.length}</span>
+                    <span className="text-brand-text">{artisan.collections.length}</span>
                   </div>
-                  <div className="flex justify-between py-3 border-b border-white/10">
+                  <div className="flex justify-between py-3 border-b border-brand-border">
                     <span>Workshop Location</span>
-                    <span className="text-white">{artisan.location}</span>
+                    <span className="text-brand-text">{artisan.location}</span>
                   </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export function ArtisanProfile() {
       </section>
 
       {/* Collections by this Artisan */}
-      <section className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1920px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -126,7 +126,7 @@ export function ArtisanProfile() {
             className="mb-16"
           >
             <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Collections</h2>
-            <p className="text-white/60 text-lg">Explore the work of {artisan.name}</p>
+            <p className="text-brand-text-muted text-lg">Explore the work of {artisan.name}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -147,7 +147,7 @@ export function ArtisanProfile() {
                     />
                   </div>
                   <h3 className="text-xl mb-2">{collection.title}</h3>
-                  <p className="text-white/60 text-sm">{collection.description}</p>
+                  <p className="text-brand-text-muted text-sm">{collection.description}</p>
                 </motion.div>
               </Link>
             ))}
@@ -186,7 +186,7 @@ export function ArtisanProfile() {
                       alt={otherArtisan.name}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-100 flex items-end p-4">
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent opacity-100 flex items-end p-4">
                       <div>
                         <p className="text-white text-sm font-medium">{otherArtisan.name}</p>
                         <p className="text-white/70 text-xs">{otherArtisan.location}</p>

@@ -28,7 +28,7 @@ export function CollectionDetail() {
               alt={collection.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-transparent" />
           </motion.div>
         </div>
 
@@ -39,7 +39,7 @@ export function CollectionDetail() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="max-w-3xl"
           >
-            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight">
+            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight text-white">
               {collection.title}
             </h1>
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
@@ -70,7 +70,7 @@ export function CollectionDetail() {
             className="mb-16"
           >
             <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Available Pieces</h2>
-            <p className="text-white/60 text-lg">Each item is crafted by hand using traditional techniques</p>
+            <p className="text-brand-text-muted text-lg">Each item is crafted by hand using traditional techniques</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -83,7 +83,7 @@ export function CollectionDetail() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group cursor-pointer"
                 >
-                  <div className="relative overflow-hidden mb-4 aspect-[3/4] bg-zinc-900">
+                  <div className="relative overflow-hidden mb-4 aspect-[3/4] bg-brand-thumbnail">
                     <ImageWithFallback
                       src={product.image}
                       alt={product.name}
@@ -92,7 +92,7 @@ export function CollectionDetail() {
                     <div className="absolute top-4 right-4 flex gap-2">
                       <button
                         onClick={(e) => e.preventDefault()}
-                        className="bg-white/10 backdrop-blur-sm p-2.5 rounded-full hover:bg-white/20 transition-colors"
+                        className="bg-stone-900/20 backdrop-blur-sm p-2.5 rounded-full hover:bg-stone-900/40 transition-colors"
                       >
                         <Heart size={18} className="text-white" />
                       </button>
@@ -102,7 +102,7 @@ export function CollectionDetail() {
                     <div className="flex justify-between items-start">
                       <div>
                         <h3 className="text-xl mb-1">{product.name}</h3>
-                        <p className="text-white/60 text-sm">{product.description}</p>
+                        <p className="text-brand-text-muted text-sm">{product.description}</p>
                       </div>
                     </div>
                     <div className="flex justify-between items-center pt-2">
@@ -111,7 +111,7 @@ export function CollectionDetail() {
                         onClick={(e) => e.preventDefault()}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-white text-black px-6 py-2.5 text-sm tracking-wide hover:bg-white/90 transition-colors flex items-center gap-2"
+                        className="bg-brand-btn text-brand-btn-text px-6 py-2.5 text-sm tracking-wide hover:bg-brand-btn-hover transition-colors flex items-center gap-2"
                       >
                         <ShoppingBag size={16} />
                         Add to Cart
@@ -126,7 +126,7 @@ export function CollectionDetail() {
       </section>
 
       {/* About the Technique */}
-      <section className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -138,10 +138,10 @@ export function CollectionDetail() {
               <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight leading-tight">
                 About the Craft
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
+              <p className="text-brand-text-strong text-lg leading-relaxed mb-6">
                 {collection.fullDescription}
               </p>
-              <p className="text-white/60 leading-relaxed mb-8">
+              <p className="text-brand-text-muted leading-relaxed mb-8">
                 Each piece in the {collection.title} collection is created using {collection.technique.toLowerCase()},
                 a time-honored process that has been passed down through generations of Indonesian artisans.
               </p>
@@ -149,7 +149,7 @@ export function CollectionDetail() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="border border-white/30 text-white px-8 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors"
+                  className="border border-brand-border-strong text-brand-text-muted px-8 py-3 text-sm tracking-wide hover:bg-brand-thumbnail transition-colors"
                 >
                   Meet the Artisans
                 </motion.button>
@@ -206,7 +206,7 @@ export function CollectionDetail() {
                       />
                     </div>
                     <h3 className="text-2xl mb-2">{otherCollection.title}</h3>
-                    <p className="text-white/60">{otherCollection.description}</p>
+                    <p className="text-brand-text-muted">{otherCollection.description}</p>
                   </motion.div>
                 </Link>
               ))}
