@@ -20,7 +20,7 @@ export function Home() {
               alt="Indonesian batik fashion"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-stone-900/80 via-stone-900/50 to-transparent" />
           </motion.div>
         </div>
 
@@ -31,7 +31,7 @@ export function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <h1 className="text-6xl lg:text-7xl mb-6 tracking-tight leading-[1.1]">
+              <h1 className="text-6xl lg:text-7xl mb-6 tracking-tight leading-[1.1] text-white">
                 Traditional Heritage<br />Meets Modern Fashion
               </h1>
               <p className="text-lg text-white/80 mb-8 leading-relaxed">
@@ -42,7 +42,7 @@ export function Home() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-white text-black px-8 py-3.5 text-sm tracking-wide hover:bg-white/90 transition-colors"
+                    className="bg-brand-bg text-brand-text px-8 py-3.5 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
                   >
                     Explore Collections
                   </motion.button>
@@ -73,7 +73,7 @@ export function Home() {
             className="mb-16"
           >
             <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Featured Collections</h2>
-            <p className="text-white/60 text-lg">Curated Indonesian craftsmanship, directly from our artisans</p>
+            <p className="text-brand-text-muted text-lg">Curated Indonesian craftsmanship, directly from our artisans</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -98,14 +98,14 @@ export function Home() {
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-stone-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="text-white text-sm tracking-wide border border-white px-6 py-2">
                         View Collection
                       </span>
                     </div>
                   </div>
                   <h3 className="text-xl mb-2">{collection.title}</h3>
-                  <p className="text-white/60 text-sm">{collection.description}</p>
+                  <p className="text-brand-text-muted text-sm">{collection.description}</p>
                 </motion.div>
               </Link>
             ))}
@@ -114,7 +114,7 @@ export function Home() {
       </section>
 
       {/* Direct-to-Consumer Value Proposition */}
-      <section id="wholesale" className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section id="wholesale" className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -126,7 +126,7 @@ export function Home() {
               <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight leading-tight">
                 Direct-to-Consumer Platform Built for Manufacturers
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-8">
+              <p className="text-brand-text-strong text-lg leading-relaxed mb-8">
                 Sell directly to customers worldwide. Skip the middlemen, keep your margins, and share your story with buyers who value authentic craftsmanship.
               </p>
               <div className="space-y-6">
@@ -134,21 +134,21 @@ export function Home() {
                   <div className="text-3xl">01</div>
                   <div>
                     <h3 className="text-xl mb-2">Direct Sales</h3>
-                    <p className="text-white/60">Reach global customers who appreciate authentic textiles</p>
+                    <p className="text-brand-text-muted">Reach global customers who appreciate authentic textiles</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="text-3xl">02</div>
                   <div>
                     <h3 className="text-xl mb-2">Your Pricing</h3>
-                    <p className="text-white/60">Keep more profit by selling directly</p>
+                    <p className="text-brand-text-muted">Keep more profit by selling directly</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="text-3xl">03</div>
                   <div>
                     <h3 className="text-xl mb-2">Full Support</h3>
-                    <p className="text-white/60">We handle payments, logistics, and customer service</p>
+                    <p className="text-brand-text-muted">We handle payments, logistics, and customer service</p>
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@ export function Home() {
             className="mb-16"
           >
             <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Featured Artisans</h2>
-            <p className="text-white/60 text-lg">Master craftspeople preserving Indonesian textile heritage</p>
+            <p className="text-brand-text-muted text-lg">Master craftspeople preserving Indonesian textile heritage</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -201,7 +201,7 @@ export function Home() {
                     alt={artisan.name}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div>
                       <p className="text-white text-sm font-medium">{artisan.name}</p>
                       <p className="text-white/70 text-xs">{artisan.location}</p>
@@ -215,7 +215,7 @@ export function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-6 lg:px-12 bg-white text-black">
+      <section className="py-32 px-6 lg:px-12 bg-brand-bg-dark text-brand-text-on-dark">
         <div className="max-w-[1000px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -226,14 +226,14 @@ export function Home() {
             <h2 className="text-5xl lg:text-6xl mb-6 tracking-tight leading-tight">
               Join the Platform
             </h2>
-            <p className="text-black/60 text-lg mb-10 max-w-2xl mx-auto">
+            <p className="text-brand-text-on-dark-muted text-lg mb-10 max-w-2xl mx-auto">
               Start selling your Indonesian textile collections directly to customers around the world
             </p>
             <Link to="/for-manufacturers">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-black text-white px-12 py-4 text-sm tracking-wide hover:bg-black/90 transition-colors"
+                className="bg-brand-btn-text text-brand-btn px-12 py-4 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
               >
                 Apply as Manufacturer
               </motion.button>

@@ -20,7 +20,7 @@ export function Collections() {
               alt="Indonesian textiles"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-stone-900/60" />
           </motion.div>
         </div>
 
@@ -30,7 +30,7 @@ export function Collections() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight">
+            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight text-white">
               Our Collections
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ export function Collections() {
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-stone-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="text-white text-sm tracking-wide border border-white px-8 py-3">
                         Explore Collection
                       </span>
@@ -73,13 +73,13 @@ export function Collections() {
                   </div>
                   <div className="space-y-3">
                     <h3 className="text-2xl tracking-tight">{collection.title}</h3>
-                    <p className="text-white/60 leading-relaxed">{collection.description}</p>
+                    <p className="text-brand-text-muted leading-relaxed">{collection.description}</p>
                     <div className="pt-2 space-y-1">
-                      <p className="text-sm text-white/50">
-                        <span className="text-white/70">Origin:</span> {collection.origin}
+                      <p className="text-sm text-brand-text-subtle">
+                        <span className="text-brand-text-strong">Origin:</span> {collection.origin}
                       </p>
-                      <p className="text-sm text-white/50">
-                        <span className="text-white/70">Technique:</span> {collection.technique}
+                      <p className="text-sm text-brand-text-subtle">
+                        <span className="text-brand-text-strong">Technique:</span> {collection.technique}
                       </p>
                     </div>
                   </div>
@@ -91,7 +91,7 @@ export function Collections() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1000px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -102,14 +102,14 @@ export function Collections() {
             <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">
               Can't Find What You're Looking For?
             </h2>
-            <p className="text-white/60 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-brand-text-muted text-lg mb-8 max-w-2xl mx-auto">
               Browse our artisan profiles to discover more unique collections and custom work
             </p>
             <Link to="/artisans">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="border border-white/30 text-white px-10 py-3.5 text-sm tracking-wide hover:bg-white/10 transition-colors"
+                className="border border-brand-border-strong text-brand-text-muted px-10 py-3.5 text-sm tracking-wide hover:bg-brand-thumbnail transition-colors"
               >
                 Meet Our Artisans
               </motion.button>

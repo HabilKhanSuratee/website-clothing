@@ -20,7 +20,7 @@ export function ForManufacturers() {
               alt="Indonesian artisan at work"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-stone-900/40" />
           </motion.div>
         </div>
 
@@ -31,7 +31,7 @@ export function ForManufacturers() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="max-w-2xl"
           >
-            <h1 className="text-5xl lg:text-7xl mb-6 tracking-tight leading-[1.1]">
+            <h1 className="text-5xl lg:text-7xl mb-6 tracking-tight leading-[1.1] text-white">
               Sell Your Craft<br />Directly to the World
             </h1>
             <p className="text-xl text-white/80 leading-relaxed mb-8">
@@ -40,7 +40,7 @@ export function ForManufacturers() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-white text-black px-12 py-4 text-sm tracking-wide hover:bg-white/90 transition-colors"
+              className="bg-brand-btn-text text-brand-btn px-12 py-4 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
             >
               Apply Now
             </motion.button>
@@ -59,7 +59,7 @@ export function ForManufacturers() {
             className="mb-16 text-center"
           >
             <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">Why Manufacturers Choose Nusantara</h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-brand-text-muted text-lg max-w-2xl mx-auto">
               Built specifically for Indonesian textile artisans who want to grow their business globally
             </p>
           </motion.div>
@@ -88,11 +88,11 @@ export function ForManufacturers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-zinc-950 p-8 border border-white/10"
+                className="bg-brand-bg-alt border border-brand-border p-8"
               >
-                <div className="text-5xl font-light mb-6 text-white/40">{benefit.stat}</div>
+                <div className="text-5xl font-light mb-6 text-brand-text-faint">{benefit.stat}</div>
                 <h3 className="text-2xl mb-4 tracking-tight">{benefit.title}</h3>
-                <p className="text-white/60 leading-relaxed">{benefit.description}</p>
+                <p className="text-brand-text-muted leading-relaxed">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -100,7 +100,7 @@ export function ForManufacturers() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -110,7 +110,7 @@ export function ForManufacturers() {
             className="mb-16"
           >
             <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Getting Started is Simple</h2>
-            <p className="text-white/60 text-lg">From application to first sale in as little as one week</p>
+            <p className="text-brand-text-muted text-lg">From application to first sale in as little as one week</p>
           </motion.div>
 
           <div className="space-y-8">
@@ -146,15 +146,15 @@ export function ForManufacturers() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex gap-8 items-start border-l-2 border-white/20 pl-8 pb-8"
+                className="flex gap-8 items-start border-l-2 border-brand-border-mid pl-8 pb-8"
               >
-                <div className="text-5xl font-light text-white/30 min-w-[80px]">{step.step}</div>
+                <div className="text-5xl font-light text-brand-text-faint min-w-[80px]">{step.step}</div>
                 <div className="flex-1">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl tracking-tight">{step.title}</h3>
-                    <span className="text-sm text-white/40 tracking-wide">{step.timeline}</span>
+                    <span className="text-sm text-brand-text-faint tracking-wide">{step.timeline}</span>
                   </div>
-                  <p className="text-white/60 leading-relaxed">{step.description}</p>
+                  <p className="text-brand-text-muted leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -193,10 +193,10 @@ export function ForManufacturers() {
                     transition={{ duration: 0.5, delay: index * 0.05 }}
                     className="flex items-center gap-4"
                   >
-                    <div className="bg-white/10 p-1.5 rounded-full">
-                      <Check size={18} className="text-white" />
+                    <div className="bg-brand-thumbnail p-1.5 rounded-full">
+                      <Check size={18} className="text-brand-text-strong" />
                     </div>
-                    <span className="text-lg text-white/80">{feature}</span>
+                    <span className="text-lg text-brand-text-strong">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -220,7 +220,7 @@ export function ForManufacturers() {
       </section>
 
       {/* Requirements */}
-      <section className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1000px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -230,7 +230,7 @@ export function ForManufacturers() {
             className="mb-12 text-center"
           >
             <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">Who Can Apply?</h2>
-            <p className="text-white/60 text-lg">
+            <p className="text-brand-text-muted text-lg">
               We partner with verified Indonesian textile manufacturers and artisans
             </p>
           </motion.div>
@@ -240,28 +240,28 @@ export function ForManufacturers() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-black/40 p-10 border border-white/10"
+            className="bg-brand-bg-card border border-brand-border p-10"
           >
             <h3 className="text-2xl mb-6 tracking-tight">Requirements:</h3>
-            <ul className="space-y-4 text-white/70">
+            <ul className="space-y-4 text-brand-text-muted">
               <li className="flex gap-3">
-                <span className="text-white/40">•</span>
+                <span className="text-brand-text-faint">•</span>
                 <span>Registered business or cooperative in Indonesia</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-white/40">•</span>
+                <span className="text-brand-text-faint">•</span>
                 <span>Demonstrated expertise in traditional Indonesian textile techniques (batik, songket, tenun, etc.)</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-white/40">•</span>
+                <span className="text-brand-text-faint">•</span>
                 <span>Ability to fulfill orders and maintain quality standards</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-white/40">•</span>
+                <span className="text-brand-text-faint">•</span>
                 <span>Commitment to ethical and sustainable practices</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-white/40">•</span>
+                <span className="text-brand-text-faint">•</span>
                 <span>Portfolio of previous work (minimum 10 pieces)</span>
               </li>
             </ul>
@@ -270,7 +270,7 @@ export function ForManufacturers() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-6 lg:px-12 bg-white text-black">
+      <section className="py-32 px-6 lg:px-12 bg-brand-bg-dark text-brand-text-on-dark">
         <div className="max-w-[1000px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -281,18 +281,18 @@ export function ForManufacturers() {
             <h2 className="text-5xl lg:text-6xl mb-6 tracking-tight leading-tight">
               Ready to Join Nusantara?
             </h2>
-            <p className="text-black/60 text-lg mb-10 max-w-2xl mx-auto">
+            <p className="text-brand-text-on-dark-muted text-lg mb-10 max-w-2xl mx-auto">
               Start your application today and reach customers around the world who value authentic Indonesian craftsmanship
             </p>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-black text-white px-12 py-4 text-sm tracking-wide hover:bg-black/90 transition-colors"
+              className="bg-brand-btn-text text-brand-btn px-12 py-4 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
             >
               Submit Application
             </motion.button>
-            <p className="text-black/40 text-sm mt-6">
-              Questions? <Link to="/about" className="text-black hover:underline">Learn more about how we work</Link>
+            <p className="text-brand-text-faint text-sm mt-6">
+              Questions? <Link to="/about" className="text-brand-text-on-dark hover:underline">Learn more about how we work</Link>
             </p>
           </motion.div>
         </div>

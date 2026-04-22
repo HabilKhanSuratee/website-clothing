@@ -20,7 +20,7 @@ export function Artisans() {
               alt="Indonesian artisans"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-stone-900/60" />
           </motion.div>
         </div>
 
@@ -30,7 +30,7 @@ export function Artisans() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight">
+            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight text-white">
               Our Master Artisans
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ export function Artisans() {
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-100 flex items-end p-6">
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-transparent opacity-100 flex items-end p-6">
                       <div className="transform transition-transform group-hover:translate-y-0">
                         <p className="text-white font-medium mb-1">{artisan.name}</p>
                         <p className="text-white/70 text-sm mb-2">{artisan.location}</p>
@@ -81,7 +81,7 @@ export function Artisans() {
       </section>
 
       {/* About Artisan Network */}
-      <section className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -93,17 +93,17 @@ export function Artisans() {
               <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight leading-tight">
                 A Network of Master Craftspeople
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
+              <p className="text-brand-text-strong text-lg leading-relaxed mb-6">
                 Every artisan on Nusantara has been carefully vetted for their expertise, authenticity, and commitment to preserving traditional Indonesian textile techniques.
               </p>
-              <p className="text-white/60 leading-relaxed mb-8">
+              <p className="text-brand-text-muted leading-relaxed mb-8">
                 From family workshops operating for generations to innovative collectives reviving ancient patterns, our artisans represent the breadth and depth of Indonesia's rich textile heritage.
               </p>
               <Link to="/for-manufacturers">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="border border-white/30 text-white px-8 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors"
+                  className="border border-brand-border-strong text-brand-text-muted px-8 py-3 text-sm tracking-wide hover:bg-brand-thumbnail transition-colors"
                 >
                   Become an Artisan Partner
                 </motion.button>
@@ -117,15 +117,15 @@ export function Artisans() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <div className="bg-black/40 p-8 border border-white/10">
-                <div className="text-4xl font-light mb-4 text-white/70">{artisans.length}</div>
+              <div className="bg-brand-bg-card border border-brand-border p-8">
+                <div className="text-4xl font-light mb-4 text-brand-text-subtle">{artisans.length}</div>
                 <p className="text-xl mb-2">Master Artisans</p>
-                <p className="text-white/60 text-sm">Across Indonesia's major textile regions</p>
+                <p className="text-brand-text-muted text-sm">Across Indonesia's major textile regions</p>
               </div>
-              <div className="bg-black/40 p-8 border border-white/10">
-                <div className="text-4xl font-light mb-4 text-white/70">100+</div>
+              <div className="bg-brand-bg-card border border-brand-border p-8">
+                <div className="text-4xl font-light mb-4 text-brand-text-subtle">100+</div>
                 <p className="text-xl mb-2">Years of Combined Experience</p>
-                <p className="text-white/60 text-sm">Preserving traditional techniques</p>
+                <p className="text-brand-text-muted text-sm">Preserving traditional techniques</p>
               </div>
             </motion.div>
           </div>
@@ -144,14 +144,14 @@ export function Artisans() {
             <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">
               Discover Their Collections
             </h2>
-            <p className="text-white/60 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-brand-text-muted text-lg mb-8 max-w-2xl mx-auto">
               Each artisan brings their unique perspective and mastery to their craft
             </p>
             <Link to="/collections">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-white text-black px-10 py-3.5 text-sm tracking-wide hover:bg-white/90 transition-colors"
+                className="bg-brand-btn text-brand-btn-text px-10 py-3.5 text-sm tracking-wide hover:bg-brand-btn-hover transition-colors"
               >
                 Browse All Collections
               </motion.button>

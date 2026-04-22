@@ -19,7 +19,7 @@ export function About() {
               alt="Indonesian textiles"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-stone-900/80 via-stone-900/60 to-transparent" />
           </motion.div>
         </div>
 
@@ -30,7 +30,7 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="max-w-2xl"
           >
-            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight leading-tight">
+            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight leading-tight text-white">
               Preserving Heritage, Empowering Artisans
             </h1>
             <p className="text-xl text-white/80 leading-relaxed">
@@ -51,10 +51,10 @@ export function About() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">Our Mission</h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
+              <p className="text-brand-text-strong text-lg leading-relaxed mb-6">
                 Nusantara was founded to bridge centuries of Indonesian textile heritage with the modern fashion world. We believe that traditional craftsmanship deserves a direct path to customers who appreciate authenticity, quality, and cultural storytelling.
               </p>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-brand-text-muted leading-relaxed">
                 By eliminating intermediaries and creating a direct-to-consumer platform, we ensure artisans receive fair compensation for their work while customers gain access to truly unique, handcrafted pieces that carry generations of knowledge and skill.
               </p>
             </motion.div>
@@ -77,7 +77,7 @@ export function About() {
       </section>
 
       {/* Indonesian Textile Heritage */}
-      <section className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -87,7 +87,7 @@ export function About() {
             className="mb-16 text-center max-w-3xl mx-auto"
           >
             <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">Indonesian Textile Traditions</h2>
-            <p className="text-white/60 text-lg">
+            <p className="text-brand-text-muted text-lg">
               Indonesia's textile heritage spans over 2,000 years, with each island developing unique techniques and symbolic patterns
             </p>
           </motion.div>
@@ -116,11 +116,11 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-black/40 p-8 border border-white/10"
+                className="bg-brand-bg-card border border-brand-border p-8"
               >
                 <h3 className="text-2xl mb-4 tracking-tight">{technique.title}</h3>
-                <p className="text-white/60 leading-relaxed mb-4">{technique.description}</p>
-                <p className="text-white/40 text-sm tracking-wide">Origin: {technique.origin}</p>
+                <p className="text-brand-text-muted leading-relaxed mb-4">{technique.description}</p>
+                <p className="text-brand-text-faint text-sm tracking-wide">Origin: {technique.origin}</p>
               </motion.div>
             ))}
           </div>
@@ -138,7 +138,7 @@ export function About() {
             className="mb-16 text-center"
           >
             <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">How Nusantara Works</h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-brand-text-muted text-lg max-w-2xl mx-auto">
               A transparent platform connecting artisans directly with customers
             </p>
           </motion.div>
@@ -152,19 +152,19 @@ export function About() {
               className="space-y-6"
             >
               <div className="flex gap-6">
-                <div className="text-4xl font-light text-white/40">01</div>
+                <div className="text-4xl font-light text-brand-text-faint">01</div>
                 <div>
                   <h3 className="text-xl mb-3">For Artisans</h3>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-brand-text-muted leading-relaxed">
                     Create your profile, upload your collections, set your prices. We handle the technology, payments, and logistics so you can focus on your craft.
                   </p>
                 </div>
               </div>
               <div className="flex gap-6">
-                <div className="text-4xl font-light text-white/40">02</div>
+                <div className="text-4xl font-light text-brand-text-faint">02</div>
                 <div>
                   <h3 className="text-xl mb-3">Direct Sales</h3>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-brand-text-muted leading-relaxed">
                     When a customer purchases your work, you keep 85% of the sale price. Our transparent platform fee covers payment processing, hosting, and support—far better margins than traditional distribution channels.
                   </p>
                 </div>
@@ -179,19 +179,19 @@ export function About() {
               className="space-y-6"
             >
               <div className="flex gap-6">
-                <div className="text-4xl font-light text-white/40">03</div>
+                <div className="text-4xl font-light text-brand-text-faint">03</div>
                 <div>
                   <h3 className="text-xl mb-3">For Customers</h3>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-brand-text-muted leading-relaxed">
                     Browse authentic collections, learn artisan stories, and purchase directly from the makers. Every piece comes with its story.
                   </p>
                 </div>
               </div>
               <div className="flex gap-6">
-                <div className="text-4xl font-light text-white/40">04</div>
+                <div className="text-4xl font-light text-brand-text-faint">04</div>
                 <div>
                   <h3 className="text-xl mb-3">Global Delivery</h3>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-brand-text-muted leading-relaxed">
                     We partner with trusted logistics providers to ensure your handcrafted piece arrives safely, no matter where you are.
                   </p>
                 </div>
@@ -202,7 +202,7 @@ export function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-6 lg:px-12 bg-white text-black">
+      <section className="py-32 px-6 lg:px-12 bg-brand-bg-dark text-brand-text-on-dark">
         <div className="max-w-[1000px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -213,7 +213,7 @@ export function About() {
             <h2 className="text-5xl lg:text-6xl mb-6 tracking-tight leading-tight">
               Ready to Get Started?
             </h2>
-            <p className="text-black/60 text-lg mb-10 max-w-2xl mx-auto">
+            <p className="text-brand-text-on-dark-muted text-lg mb-10 max-w-2xl mx-auto">
               Whether you're an artisan looking to reach global customers or a buyer seeking authentic Indonesian textiles
             </p>
             <div className="flex gap-4 justify-center">
@@ -221,7 +221,7 @@ export function About() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-black text-white px-10 py-4 text-sm tracking-wide hover:bg-black/90 transition-colors"
+                  className="bg-brand-btn-text text-brand-btn px-10 py-4 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
                 >
                   Become a Manufacturer
                 </motion.button>
@@ -230,7 +230,7 @@ export function About() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="border border-black/30 text-black px-10 py-4 text-sm tracking-wide hover:bg-black/5 transition-colors"
+                  className="border border-brand-border-strong text-brand-text-on-dark px-10 py-4 text-sm tracking-wide hover:bg-brand-bg-dark-hover transition-colors"
                 >
                   Shop Collections
                 </motion.button>

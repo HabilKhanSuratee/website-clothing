@@ -29,17 +29,17 @@ export function ProductDetail() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="mb-8 flex items-center gap-2 text-sm text-white/60"
+            className="mb-8 flex items-center gap-2 text-sm text-brand-text-subtle"
           >
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <Link to="/" className="hover:text-brand-text transition-colors">Home</Link>
             <span>/</span>
-            <Link to="/collections" className="hover:text-white transition-colors">Collections</Link>
+            <Link to="/collections" className="hover:text-brand-text transition-colors">Collections</Link>
             <span>/</span>
-            <Link to={`/collections/${collection.id}`} className="hover:text-white transition-colors">
+            <Link to={`/collections/${collection.id}`} className="hover:text-brand-text transition-colors">
               {collection.title}
             </Link>
             <span>/</span>
-            <span className="text-white">{product.name}</span>
+            <span className="text-brand-text">{product.name}</span>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16">
@@ -50,7 +50,7 @@ export function ProductDetail() {
               transition={{ duration: 0.8 }}
             >
               <div className="sticky top-24">
-                <div className="aspect-[3/4] bg-zinc-900 mb-6">
+                <div className="aspect-[3/4] bg-brand-thumbnail mb-6">
                   <ImageWithFallback
                     src={product.image}
                     alt={product.name}
@@ -61,7 +61,7 @@ export function ProductDetail() {
                   {[product.image, product.image, product.image, product.image].map((img, i) => (
                     <button
                       key={i}
-                      className="aspect-square bg-zinc-900 opacity-70 hover:opacity-100 transition-opacity"
+                      className="aspect-square bg-brand-thumbnail opacity-70 hover:opacity-100 transition-opacity"
                     >
                       <ImageWithFallback
                         src={img}
@@ -84,7 +84,7 @@ export function ProductDetail() {
               <div>
                 <Link
                   to={`/collections/${collection.id}`}
-                  className="text-sm tracking-wide text-white/60 hover:text-white transition-colors mb-3 inline-block"
+                  className="text-sm tracking-wide text-brand-text-muted hover:text-brand-text transition-colors mb-3 inline-block"
                 >
                   {collection.title}
                 </Link>
@@ -92,7 +92,7 @@ export function ProductDetail() {
                   {product.name}
                 </h1>
                 <p className="text-3xl mb-6">Rp {product.price.toLocaleString('id-ID')}</p>
-                <p className="text-white/70 text-lg leading-relaxed">
+                <p className="text-brand-text-strong text-lg leading-relaxed">
                   {product.description}
                 </p>
               </div>
@@ -101,7 +101,7 @@ export function ProductDetail() {
               <div>
                 <div className="flex justify-between items-center mb-4">
                   <label className="text-sm tracking-wide">Select Size</label>
-                  <button className="text-sm text-white/60 hover:text-white transition-colors underline">
+                  <button className="text-sm text-brand-text-subtle hover:text-brand-text transition-colors underline">
                     Size Guide
                   </button>
                 </div>
@@ -112,8 +112,8 @@ export function ProductDetail() {
                       onClick={() => setSelectedSize(size)}
                       className={`py-3 text-sm tracking-wide border transition-colors ${
                         selectedSize === size
-                          ? "bg-white text-black border-white"
-                          : "bg-transparent text-white border-white/30 hover:border-white/50"
+                          ? "bg-brand-btn text-brand-btn-text border-brand-btn"
+                          : "bg-transparent text-brand-text-strong border-brand-border-mid hover:border-brand-border-strong"
                       }`}
                     >
                       {size}
@@ -127,7 +127,7 @@ export function ProductDetail() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-white text-black py-4 text-sm tracking-wide hover:bg-white/90 transition-colors flex items-center justify-center gap-3"
+                  className="w-full bg-brand-btn text-brand-btn-text py-4 text-sm tracking-wide hover:bg-brand-btn-hover transition-colors flex items-center justify-center gap-3"
                 >
                   <ShoppingBag size={20} />
                   Add to Cart
@@ -135,7 +135,7 @@ export function ProductDetail() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full border border-white/30 text-white py-4 text-sm tracking-wide hover:bg-white/10 transition-colors flex items-center justify-center gap-3"
+                  className="w-full border border-brand-border-mid text-brand-text-muted py-4 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors flex items-center justify-center gap-3"
                 >
                   <Heart size={20} />
                   Add to Wishlist
@@ -143,41 +143,41 @@ export function ProductDetail() {
               </div>
 
               {/* Product Features */}
-              <div className="border-t border-white/10 pt-8 space-y-4">
+              <div className="border-t border-brand-border pt-8 space-y-4">
                 <div className="flex items-start gap-4">
-                  <CheckCircle size={20} className="text-white/60 mt-1" />
+                  <CheckCircle size={20} className="text-brand-text-subtle mt-1" />
                   <div>
                     <p className="font-medium mb-1">Authentic Handcrafted</p>
-                    <p className="text-white/60 text-sm">Made using traditional {collection.technique.toLowerCase()}</p>
+                    <p className="text-brand-text-muted text-sm">Made using traditional {collection.technique.toLowerCase()}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Package size={20} className="text-white/60 mt-1" />
+                  <Package size={20} className="text-brand-text-subtle mt-1" />
                   <div>
                     <p className="font-medium mb-1">Free Shipping</p>
-                    <p className="text-white/60 text-sm">On orders over Rp 3,000,000</p>
+                    <p className="text-brand-text-muted text-sm">On orders over Rp 3,000,000</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <RefreshCw size={20} className="text-white/60 mt-1" />
+                  <RefreshCw size={20} className="text-brand-text-subtle mt-1" />
                   <div>
                     <p className="font-medium mb-1">Easy Returns</p>
-                    <p className="text-white/60 text-sm">30-day return policy</p>
+                    <p className="text-brand-text-muted text-sm">30-day return policy</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Shield size={20} className="text-white/60 mt-1" />
+                  <Shield size={20} className="text-brand-text-subtle mt-1" />
                   <div>
                     <p className="font-medium mb-1">Authenticity Guaranteed</p>
-                    <p className="text-white/60 text-sm">Certificate of authenticity included</p>
+                    <p className="text-brand-text-muted text-sm">Certificate of authenticity included</p>
                   </div>
                 </div>
               </div>
 
               {/* Artisan Info */}
               {artisan && (
-                <div className="border-t border-white/10 pt-8">
-                  <p className="text-sm tracking-wide text-white/60 mb-4">CRAFTED BY</p>
+                <div className="border-t border-brand-border pt-8">
+                  <p className="text-sm tracking-wide text-brand-text-subtle mb-4">CRAFTED BY</p>
                   <Link to={`/artisans/${artisan.id}`} className="flex items-center gap-4 group">
                     <div className="w-16 h-16 rounded-full overflow-hidden">
                       <ImageWithFallback
@@ -187,8 +187,8 @@ export function ProductDetail() {
                       />
                     </div>
                     <div>
-                      <p className="font-medium group-hover:text-white/70 transition-colors">{artisan.name}</p>
-                      <p className="text-white/60 text-sm">{artisan.location}</p>
+                      <p className="font-medium group-hover:text-brand-text-subtle transition-colors">{artisan.name}</p>
+                      <p className="text-brand-text-muted text-sm">{artisan.location}</p>
                     </div>
                   </Link>
                 </div>
@@ -199,15 +199,15 @@ export function ProductDetail() {
       </section>
 
       {/* Product Details Accordion */}
-      <section className="py-24 px-6 lg:px-12 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1600px] mx-auto">
           <div className="space-y-6">
-            <details className="group border-b border-white/10 pb-6">
+            <details className="group border-b border-brand-border pb-6">
               <summary className="flex justify-between items-center cursor-pointer text-xl tracking-tight">
                 <span>Description</span>
-                <span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
+                <span className="text-brand-text-faint group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <div className="mt-6 text-white/70 leading-relaxed space-y-4">
+              <div className="mt-6 text-brand-text-muted leading-relaxed space-y-4">
                 <p>{product.description}</p>
                 <p>
                   This piece is part of our {collection.title} collection, featuring {collection.technique.toLowerCase()}.
@@ -217,12 +217,12 @@ export function ProductDetail() {
               </div>
             </details>
 
-            <details className="group border-b border-white/10 pb-6">
+            <details className="group border-b border-brand-border pb-6">
               <summary className="flex justify-between items-center cursor-pointer text-xl tracking-tight">
                 <span>Materials & Care</span>
-                <span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
+                <span className="text-brand-text-faint group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <div className="mt-6 text-white/70 leading-relaxed">
+              <div className="mt-6 text-brand-text-muted leading-relaxed">
                 <ul className="space-y-2">
                   <li>• 100% natural fibers (cotton or silk)</li>
                   <li>• Hand-dyed using traditional methods</li>
@@ -233,12 +233,12 @@ export function ProductDetail() {
               </div>
             </details>
 
-            <details className="group border-b border-white/10 pb-6">
+            <details className="group border-b border-brand-border pb-6">
               <summary className="flex justify-between items-center cursor-pointer text-xl tracking-tight">
                 <span>Shipping & Returns</span>
-                <span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
+                <span className="text-brand-text-faint group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <div className="mt-6 text-white/70 leading-relaxed space-y-4">
+              <div className="mt-6 text-brand-text-muted leading-relaxed space-y-4">
                 <p>
                   <strong>Shipping:</strong> We offer worldwide shipping. Orders over Rp 3,000,000 receive free international shipping.
                   Standard delivery takes 7-14 business days.
@@ -279,7 +279,7 @@ export function ProductDetail() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="group"
                   >
-                    <div className="relative overflow-hidden mb-4 aspect-[3/4] bg-zinc-900">
+                    <div className="relative overflow-hidden mb-4 aspect-[3/4] bg-brand-thumbnail">
                       <ImageWithFallback
                         src={relatedProduct.image}
                         alt={relatedProduct.name}

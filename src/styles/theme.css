@@ -39,6 +39,27 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* ─── Brand palette — edit here to retheme the whole site ─── */
+  --brand-bg:                 #fafaf9; /* stone-50  */
+  --brand-bg-alt:             #f5f5f4; /* stone-100 */
+  --brand-bg-card:            #ffffff; /* white     */
+  --brand-bg-dark:            #292524; /* stone-800 */
+  --brand-bg-dark-hover:      #44403c; /* stone-700 */
+  --brand-thumbnail:          #e7e5e4; /* stone-200 */
+  --brand-text:               #1c1917; /* stone-900 */
+  --brand-text-strong:        #44403c; /* stone-700 */
+  --brand-text-muted:         #57534e; /* stone-600 */
+  --brand-text-subtle:        #78716c; /* stone-500 */
+  --brand-text-faint:         #a8a29e; /* stone-400 */
+  --brand-text-on-dark:       #fafaf9; /* stone-50  */
+  --brand-text-on-dark-muted: #d6d3d1; /* stone-300 */
+  --brand-border:             #e7e5e4; /* stone-200 */
+  --brand-border-mid:         #d6d3d1; /* stone-300 */
+  --brand-border-strong:      #a8a29e; /* stone-400 */
+  --brand-btn:                #1c1917; /* stone-900 */
+  --brand-btn-hover:          #292524; /* stone-800 */
+  --brand-btn-text:           #fafaf9; /* stone-50  */
 }
 
 .dark {
@@ -76,6 +97,27 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+
+  /* Brand palette overrides for dark mode */
+  --brand-bg:                 #000000;
+  --brand-bg-alt:             #09090b;
+  --brand-bg-card:            #0d0d0d;
+  --brand-bg-dark:            #ffffff;
+  --brand-bg-dark-hover:      #e6e6e6;
+  --brand-thumbnail:          #18181b;
+  --brand-text:               #ffffff;
+  --brand-text-strong:        #b3b3b3;
+  --brand-text-muted:         #999999;
+  --brand-text-subtle:        #808080;
+  --brand-text-faint:         #666666;
+  --brand-text-on-dark:       #000000;
+  --brand-text-on-dark-muted: #666666;
+  --brand-border:             #1a1a1a;
+  --brand-border-mid:         #333333;
+  --brand-border-strong:      #4d4d4d;
+  --brand-btn:                #ffffff;
+  --brand-btn-hover:          #e6e6e6;
+  --brand-btn-text:           #000000;
 }
 
 @theme inline {
@@ -117,6 +159,25 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-bg:                 var(--brand-bg);
+  --color-brand-bg-alt:             var(--brand-bg-alt);
+  --color-brand-bg-card:            var(--brand-bg-card);
+  --color-brand-bg-dark:            var(--brand-bg-dark);
+  --color-brand-bg-dark-hover:      var(--brand-bg-dark-hover);
+  --color-brand-thumbnail:          var(--brand-thumbnail);
+  --color-brand-text:               var(--brand-text);
+  --color-brand-text-strong:        var(--brand-text-strong);
+  --color-brand-text-muted:         var(--brand-text-muted);
+  --color-brand-text-subtle:        var(--brand-text-subtle);
+  --color-brand-text-faint:         var(--brand-text-faint);
+  --color-brand-text-on-dark:       var(--brand-text-on-dark);
+  --color-brand-text-on-dark-muted: var(--brand-text-on-dark-muted);
+  --color-brand-border:             var(--brand-border);
+  --color-brand-border-mid:         var(--brand-border-mid);
+  --color-brand-border-strong:      var(--brand-border-strong);
+  --color-brand-btn:                var(--brand-btn);
+  --color-brand-btn-hover:          var(--brand-btn-hover);
+  --color-brand-btn-text:           var(--brand-btn-text);
 }
 
 @layer base {
