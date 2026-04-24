@@ -10,25 +10,51 @@ const navLinks = [
   { to: "/about", label: "About" },
 ];
 
-function useDarkMode() {
-  const [dark, setDark] = useState(() => {
-    if (typeof window === "undefined") return false;
+type ThemeConfig = {
+  name: string;
+  cssClass: string;
+  icon: React.ReactNode;
+};
+
+// To add a theme: append an entry here, then add a .theme-<name> block in theme.css.
+// icon = the symbol that represents this theme (shown on the button when this theme is next).
+const THEMES: ThemeConfig[] = [
+  { name: "light",     cssClass: "",                icon: <Sun size={18} /> },
+  { name: "dark",      cssClass: "dark",            icon: <Moon size={18} /> },
+  { name: "botanical",  cssClass: "theme-botanical",  icon: <span className="inline-flex items-center justify-center w-[18px] h-[18px] text-sm font-bold leading-none select-none">1</span> },
+  { name: "olive",      cssClass: "theme-olive",      icon: <span className="inline-flex items-center justify-center w-[18px] h-[18px] text-sm font-bold leading-none select-none">2</span> },
+  { name: "caramel",    cssClass: "theme-caramel",    icon: <span className="inline-flex items-center justify-center w-[18px] h-[18px] text-sm font-bold leading-none select-none">3</span> },
+  { name: "coffee",     cssClass: "theme-coffee",     icon: <span className="inline-flex items-center justify-center w-[18px] h-[18px] text-sm font-bold leading-none select-none">4</span> },
+  { name: "ember",      cssClass: "theme-ember",      icon: <span className="inline-flex items-center justify-center w-[18px] h-[18px] text-sm font-bold leading-none select-none">5</span> },
+  { name: "mocha",      cssClass: "theme-mocha",      icon: <span className="inline-flex items-center justify-center w-[18px] h-[18px] text-sm font-bold leading-none select-none">6</span> },
+  { name: "vivid",      cssClass: "theme-vivid",      icon: <span className="inline-flex items-center justify-center w-[18px] h-[18px] text-sm font-bold leading-none select-none">7</span> },
+  { name: "nusantara",  cssClass: "theme-nusantara",  icon: <span className="inline-flex items-center justify-center w-[18px] h-[18px] text-sm font-bold leading-none select-none">8</span> },
+];
+
+function useTheme() {
+  const [index, setIndex] = useState(() => {
+    if (typeof window === "undefined") return 0;
     const stored = localStorage.getItem("theme");
-    if (stored) return stored === "dark";
-    return false;
+    const found = THEMES.findIndex(t => t.name === stored);
+    return found >= 0 ? found : 0;
   });
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-    localStorage.setItem("theme", dark ? "dark" : "light");
-  }, [dark]);
+    const current = THEMES[index];
+    THEMES.forEach(t => { if (t.cssClass) document.documentElement.classList.remove(t.cssClass); });
+    if (current.cssClass) document.documentElement.classList.add(current.cssClass);
+    localStorage.setItem("theme", current.name);
+  }, [index]);
 
-  return [dark, setDark] as const;
+  const cycle = () => setIndex(i => (i + 1) % THEMES.length);
+  const next = THEMES[(index + 1) % THEMES.length];
+
+  return { current: THEMES[index], cycle, next };
 }
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useDarkMode();
+  const { current, cycle, next } = useTheme();
   const navigate = useNavigate();
 
   function handleMobileNav(to: string) {
@@ -76,11 +102,11 @@ export function Header() {
               <ShoppingBag size={18} />
             </button>
             <button
-              onClick={() => setDark(d => !d)}
+              onClick={cycle}
               className="hover:text-brand-text-on-dark-muted transition-colors"
-              aria-label="Toggle dark mode"
+              aria-label={`Current theme: ${current.name}. Switch to ${next.name}`}
             >
-              {dark ? <Sun size={18} /> : <Moon size={18} />}
+              {current.icon}
             </button>
             {/* Hamburger — mobile only */}
             <button
