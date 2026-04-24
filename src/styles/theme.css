@@ -40,6 +40,56 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
+  /* ─── Botanical palette raw colours ─── */
+  --palette-botanical-terracotta: #A47251; /* rgb(164, 114, 81)  */
+  --palette-botanical-amber:      #DD9E59; /* rgb(221, 158, 89)  */
+  --palette-botanical-gold:       #F0D8A1; /* rgb(240, 216, 161) */
+  --palette-botanical-sage:       #DCF0C3; /* rgb(220, 240, 195) */
+
+  /* ─── Olive palette raw colours ─── */
+  --palette-olive-dark:    #3E3F29; /* dark olive          */
+  --palette-olive-teal:    #7D8D86; /* muted teal          */
+  --palette-olive-khaki:   #BCA88D; /* warm khaki          */
+  --palette-olive-linen:   #F1F0E4; /* off-white linen     */
+
+  /* ─── Caramel palette raw colours ─── */
+  --palette-caramel-cream:  #FFEAC5; /* rgb(255, 234, 197)  */
+  --palette-caramel-peach:  #FFDBB5; /* rgb(255, 219, 181)  */
+  --palette-caramel-coffee: #6C4E31; /* rgb(108, 78, 49)    */
+  --palette-caramel-deep:   #603F26; /* rgb(96, 63, 38)     */
+
+  /* ─── Coffee palette raw colours ─── */
+  --palette-coffee-dark:   #6F4E37; /* rgb(111, 78, 55)    */
+  --palette-coffee-mid:    #A67B5B; /* rgb(166, 123, 91)   */
+  --palette-coffee-amber:  #ECB176; /* rgb(236, 177, 118)  */
+  --palette-coffee-light:  #FED8B1; /* rgb(254, 216, 177)  */
+
+  /* ─── Ember palette raw colours ─── */
+  --palette-ember-crimson: #5E0006; /* rgb(94, 0, 6)       */
+  --palette-ember-red:     #9B0F06; /* rgb(155, 15, 6)     */
+  --palette-ember-flame:   #D53E0F; /* rgb(213, 62, 15)    */
+  --palette-ember-cream:   #EED9B9; /* rgb(238, 217, 185)  */
+
+  /* ─── Mocha palette raw colours ─── */
+  --palette-mocha-espresso:  #1A120B; /* rgb(26, 18, 11)     */
+  --palette-mocha-brown:     #3C2A21; /* rgb(60, 42, 33)     */
+  --palette-mocha-parchment: #D5CEA3; /* rgb(213, 206, 163)  */
+  --palette-mocha-sage:      #E5E5CB; /* rgb(229, 229, 203)  */
+
+  /* ─── Vivid palette raw colours ─── */
+  --palette-vivid-navy:   #003049; /* rgb(0, 48, 73)      */
+  --palette-vivid-red:    #D62828; /* rgb(214, 40, 40)    */
+  --palette-vivid-orange: #F77F00; /* rgb(247, 127, 0)    */
+  --palette-vivid-gold:   #FCBF49; /* rgb(252, 191, 73)   */
+
+  /* ─── Nusantara palette raw colours ─── */
+  --palette-nusantara-ebony:  #0F0F0F; /* deep ebony          */
+  --palette-nusantara-ivory:  #F5F1E8; /* ivory / bone white  */
+  --palette-nusantara-sand:   #D8CBB8; /* warm sand           */
+  --palette-nusantara-indigo: #1A2A44; /* batik indigo        */
+  --palette-nusantara-gold:   #C2A46D; /* muted gold          */
+  --palette-nusantara-clove:  #6B4A3A; /* clove brown         */
+
   /* ─── Brand palette — edit here to retheme the whole site ─── */
   --brand-bg:                 #F9F6F0; /* warm cream          */
   --brand-bg-alt:             #F0EAE0; /* deeper cream        */
@@ -124,6 +174,240 @@
   --brand-header-text:        #ffffff;
 }
 
+.theme-botanical {
+  --background: #DCF0C3;
+  --foreground: #5C3D1E;
+  --card: #ffffff;
+  --card-foreground: #5C3D1E;
+
+  /* Brand palette overrides for botanical theme */
+  --brand-bg:                 #DCF0C3; /* sage green          */
+  --brand-bg-alt:             #F0D8A1; /* soft gold           */
+  --brand-bg-card:            #FFFFFF; /* white card          */
+  --brand-bg-dark:            #A47251; /* terracotta CTA      */
+  --brand-bg-dark-hover:      #8B5E3C; /* darker terracotta   */
+  --brand-thumbnail:          #F0D8A1; /* soft gold           */
+  --brand-text:               #5C3D1E; /* deep brown          */
+  --brand-text-strong:        #7A4E2D; /* medium brown        */
+  --brand-text-muted:         #A47251; /* terracotta          */
+  --brand-text-subtle:        #C4894A; /* light amber         */
+  --brand-text-faint:         #DD9E59; /* amber               */
+  --brand-text-on-dark:       #F0D8A1; /* gold on terracotta  */
+  --brand-text-on-dark-muted: #DCF0C3; /* sage on terracotta  */
+  --brand-border:             #F0D8A1; /* soft gold border    */
+  --brand-border-mid:         #DD9E59; /* amber border        */
+  --brand-border-strong:      #A47251; /* terracotta border   */
+  --brand-btn:                #A47251; /* terracotta button   */
+  --brand-btn-hover:          #8B5E3C; /* darker terracotta   */
+  --brand-btn-text:           #F0D8A1; /* gold on button      */
+  --brand-header-bg:          #A47251; /* terracotta header   */
+  --brand-header-text:        #F0D8A1; /* gold header text    */
+}
+
+.theme-olive {
+  --background: #F1F0E4;
+  --foreground: #3E3F29;
+  --card: #ffffff;
+  --card-foreground: #3E3F29;
+
+  /* Brand palette overrides for olive theme */
+  --brand-bg:                 #F1F0E4; /* off-white linen     */
+  --brand-bg-alt:             #E4E3D4; /* deeper linen        */
+  --brand-bg-card:            #FFFFFF; /* white card          */
+  --brand-bg-dark:            #3E3F29; /* dark olive CTA      */
+  --brand-bg-dark-hover:      #2E2F1A; /* darker olive hover  */
+  --brand-thumbnail:          #BCA88D; /* khaki placeholder   */
+  --brand-text:               #3E3F29; /* dark olive primary  */
+  --brand-text-strong:        #4A4B34; /* mid olive           */
+  --brand-text-muted:         #7D8D86; /* muted teal          */
+  --brand-text-subtle:        #8D9D96; /* lighter teal        */
+  --brand-text-faint:         #BCA88D; /* khaki faint         */
+  --brand-text-on-dark:       #F1F0E4; /* linen on olive      */
+  --brand-text-on-dark-muted: #BCA88D; /* khaki on olive      */
+  --brand-border:             #BCA88D; /* khaki border        */
+  --brand-border-mid:         #7D8D86; /* teal border         */
+  --brand-border-strong:      #3E3F29; /* olive border        */
+  --brand-btn:                #3E3F29; /* dark olive button   */
+  --brand-btn-hover:          #2E2F1A; /* darker olive        */
+  --brand-btn-text:           #F1F0E4; /* linen on button     */
+  --brand-header-bg:          #3E3F29; /* dark olive header   */
+  --brand-header-text:        #F1F0E4; /* linen header text   */
+}
+
+.theme-caramel {
+  --background: #FFEAC5;
+  --foreground: #603F26;
+  --card: #ffffff;
+  --card-foreground: #603F26;
+
+  --brand-bg:                 #FFEAC5; /* cream               */
+  --brand-bg-alt:             #FFDBB5; /* peach               */
+  --brand-bg-card:            #FFFFFF;
+  --brand-bg-dark:            #6C4E31; /* coffee              */
+  --brand-bg-dark-hover:      #603F26; /* deep coffee         */
+  --brand-thumbnail:          #FFDBB5;
+  --brand-text:               #603F26; /* deepest brown       */
+  --brand-text-strong:        #6C4E31;
+  --brand-text-muted:         #8A6040;
+  --brand-text-subtle:        #A07850;
+  --brand-text-faint:         #C09870;
+  --brand-text-on-dark:       #FFEAC5;
+  --brand-text-on-dark-muted: #FFDBB5;
+  --brand-border:             #FFDBB5;
+  --brand-border-mid:         #C09870;
+  --brand-border-strong:      #6C4E31;
+  --brand-btn:                #6C4E31;
+  --brand-btn-hover:          #603F26;
+  --brand-btn-text:           #FFEAC5;
+  --brand-header-bg:          #6C4E31;
+  --brand-header-text:        #FFEAC5;
+}
+
+.theme-coffee {
+  --background: #FED8B1;
+  --foreground: #6F4E37;
+  --card: #ffffff;
+  --card-foreground: #6F4E37;
+
+  --brand-bg:                 #FED8B1; /* light peach         */
+  --brand-bg-alt:             #F5E0C0; /* slightly deeper     */
+  --brand-bg-card:            #FFFFFF;
+  --brand-bg-dark:            #6F4E37; /* coffee              */
+  --brand-bg-dark-hover:      #5A3D28;
+  --brand-thumbnail:          #ECB176;
+  --brand-text:               #6F4E37;
+  --brand-text-strong:        #7A5540;
+  --brand-text-muted:         #A67B5B;
+  --brand-text-subtle:        #C49070;
+  --brand-text-faint:         #ECB176;
+  --brand-text-on-dark:       #FED8B1;
+  --brand-text-on-dark-muted: #ECB176;
+  --brand-border:             #ECB176;
+  --brand-border-mid:         #A67B5B;
+  --brand-border-strong:      #6F4E37;
+  --brand-btn:                #6F4E37;
+  --brand-btn-hover:          #5A3D28;
+  --brand-btn-text:           #FED8B1;
+  --brand-header-bg:          #6F4E37;
+  --brand-header-text:        #FED8B1;
+}
+
+.theme-ember {
+  --background: #EED9B9;
+  --foreground: #5E0006;
+  --card: #ffffff;
+  --card-foreground: #5E0006;
+
+  --brand-bg:                 #EED9B9; /* warm cream          */
+  --brand-bg-alt:             #E4CCA8; /* deeper cream        */
+  --brand-bg-card:            #FFFFFF;
+  --brand-bg-dark:            #5E0006; /* deep crimson        */
+  --brand-bg-dark-hover:      #4A0005;
+  --brand-thumbnail:          #E4CCA8;
+  --brand-text:               #5E0006;
+  --brand-text-strong:        #9B0F06;
+  --brand-text-muted:         #C03010;
+  --brand-text-subtle:        #D53E0F;
+  --brand-text-faint:         #E87040;
+  --brand-text-on-dark:       #EED9B9;
+  --brand-text-on-dark-muted: #D9C4A4;
+  --brand-border:             #D9C4A4;
+  --brand-border-mid:         #CC5020;
+  --brand-border-strong:      #9B0F06;
+  --brand-btn:                #9B0F06;
+  --brand-btn-hover:          #5E0006;
+  --brand-btn-text:           #EED9B9;
+  --brand-header-bg:          #5E0006;
+  --brand-header-text:        #EED9B9;
+}
+
+.theme-mocha {
+  --background: #E5E5CB;
+  --foreground: #1A120B;
+  --card: #ffffff;
+  --card-foreground: #1A120B;
+
+  --brand-bg:                 #E5E5CB; /* sage cream          */
+  --brand-bg-alt:             #D5CEA3; /* parchment           */
+  --brand-bg-card:            #FFFFFF;
+  --brand-bg-dark:            #1A120B; /* espresso            */
+  --brand-bg-dark-hover:      #0F0A05;
+  --brand-thumbnail:          #D5CEA3;
+  --brand-text:               #1A120B;
+  --brand-text-strong:        #3C2A21;
+  --brand-text-muted:         #5A4035;
+  --brand-text-subtle:        #8A6855;
+  --brand-text-faint:         #B8A880;
+  --brand-text-on-dark:       #E5E5CB;
+  --brand-text-on-dark-muted: #D5CEA3;
+  --brand-border:             #D5CEA3;
+  --brand-border-mid:         #B8A880;
+  --brand-border-strong:      #3C2A21;
+  --brand-btn:                #3C2A21;
+  --brand-btn-hover:          #1A120B;
+  --brand-btn-text:           #E5E5CB;
+  --brand-header-bg:          #1A120B;
+  --brand-header-text:        #E5E5CB;
+}
+
+.theme-vivid {
+  --background: #FFF4D6;
+  --foreground: #003049;
+  --card: #ffffff;
+  --card-foreground: #003049;
+
+  --brand-bg:                 #FFF4D6; /* warm off-white      */
+  --brand-bg-alt:             #FCBF49; /* golden yellow       */
+  --brand-bg-card:            #FFFFFF;
+  --brand-bg-dark:            #003049; /* navy                */
+  --brand-bg-dark-hover:      #00243A;
+  --brand-thumbnail:          #FCBF49;
+  --brand-text:               #003049;
+  --brand-text-strong:        #001828;
+  --brand-text-muted:         #7A4A00;
+  --brand-text-subtle:        #F77F00;
+  --brand-text-faint:         #FCBF49;
+  --brand-text-on-dark:       #FCBF49;
+  --brand-text-on-dark-muted: #F77F00;
+  --brand-border:             #FCBF49;
+  --brand-border-mid:         #F77F00;
+  --brand-border-strong:      #D62828;
+  --brand-btn:                #D62828;
+  --brand-btn-hover:          #B01E1E;
+  --brand-btn-text:           #FFFFFF;
+  --brand-header-bg:          #003049;
+  --brand-header-text:        #FCBF49;
+}
+
+.theme-nusantara {
+  --background: #F5F1E8;
+  --foreground: #0F0F0F;
+  --card: #ffffff;
+  --card-foreground: #0F0F0F;
+
+  --brand-bg:                 #F5F1E8; /* ivory               */
+  --brand-bg-alt:             #EDE8DC; /* deeper ivory        */
+  --brand-bg-card:            #FFFFFF;
+  --brand-bg-dark:            #1A2A44; /* batik indigo        */
+  --brand-bg-dark-hover:      #0F1D30;
+  --brand-thumbnail:          #D8CBB8;
+  --brand-text:               #0F0F0F;
+  --brand-text-strong:        #1A2A44;
+  --brand-text-muted:         #6B4A3A;
+  --brand-text-subtle:        #C2A46D;
+  --brand-text-faint:         #D8CBB8;
+  --brand-text-on-dark:       #F5F1E8;
+  --brand-text-on-dark-muted: #D8CBB8;
+  --brand-border:             #D8CBB8;
+  --brand-border-mid:         #C2A46D;
+  --brand-border-strong:      #6B4A3A;
+  --brand-btn:                #1A2A44;
+  --brand-btn-hover:          #0F1D30;
+  --brand-btn-text:           #F5F1E8;
+  --brand-header-bg:          #0F0F0F;
+  --brand-header-text:        #F5F1E8;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -184,6 +468,40 @@
   --color-brand-btn-text:           var(--brand-btn-text);
   --color-brand-header-bg:          var(--brand-header-bg);
   --color-brand-header-text:        var(--brand-header-text);
+  --color-palette-botanical-terracotta: var(--palette-botanical-terracotta);
+  --color-palette-botanical-amber:      var(--palette-botanical-amber);
+  --color-palette-botanical-gold:       var(--palette-botanical-gold);
+  --color-palette-botanical-sage:       var(--palette-botanical-sage);
+  --color-palette-olive-dark:               var(--palette-olive-dark);
+  --color-palette-olive-teal:               var(--palette-olive-teal);
+  --color-palette-olive-khaki:              var(--palette-olive-khaki);
+  --color-palette-olive-linen:              var(--palette-olive-linen);
+  --color-palette-caramel-cream:            var(--palette-caramel-cream);
+  --color-palette-caramel-peach:            var(--palette-caramel-peach);
+  --color-palette-caramel-coffee:           var(--palette-caramel-coffee);
+  --color-palette-caramel-deep:             var(--palette-caramel-deep);
+  --color-palette-coffee-dark:              var(--palette-coffee-dark);
+  --color-palette-coffee-mid:               var(--palette-coffee-mid);
+  --color-palette-coffee-amber:             var(--palette-coffee-amber);
+  --color-palette-coffee-light:             var(--palette-coffee-light);
+  --color-palette-ember-crimson:            var(--palette-ember-crimson);
+  --color-palette-ember-red:                var(--palette-ember-red);
+  --color-palette-ember-flame:              var(--palette-ember-flame);
+  --color-palette-ember-cream:              var(--palette-ember-cream);
+  --color-palette-mocha-espresso:           var(--palette-mocha-espresso);
+  --color-palette-mocha-brown:              var(--palette-mocha-brown);
+  --color-palette-mocha-parchment:          var(--palette-mocha-parchment);
+  --color-palette-mocha-sage:               var(--palette-mocha-sage);
+  --color-palette-vivid-navy:               var(--palette-vivid-navy);
+  --color-palette-vivid-red:                var(--palette-vivid-red);
+  --color-palette-vivid-orange:             var(--palette-vivid-orange);
+  --color-palette-vivid-gold:               var(--palette-vivid-gold);
+  --color-palette-nusantara-ebony:          var(--palette-nusantara-ebony);
+  --color-palette-nusantara-ivory:          var(--palette-nusantara-ivory);
+  --color-palette-nusantara-sand:           var(--palette-nusantara-sand);
+  --color-palette-nusantara-indigo:         var(--palette-nusantara-indigo);
+  --color-palette-nusantara-gold:           var(--palette-nusantara-gold);
+  --color-palette-nusantara-clove:          var(--palette-nusantara-clove);
 }
 
 @layer base {

@@ -4,7 +4,10 @@ import { collections, artisans } from "../data/collections";
 import { PageHero } from "../components/PageHero";
 import { SectionHeader } from "../components/SectionHeader";
 import { CollectionCard } from "../components/CollectionCard";
+import { ProductCard } from "../components/ProductCard";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+
+const curatedProducts = collections.flatMap((c) => c.products ?? []).slice(0, 4);
 
 export function Home() {
   return (
@@ -67,6 +70,30 @@ export function Home() {
                 alt={collection.title}
                 title={collection.title}
                 description={collection.description}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Curated Pieces */}
+      <section id="curated-pieces" className="py-24 px-6 lg:px-12">
+        <div className="max-w-[1920px] mx-auto">
+          <SectionHeader
+            title="Curated Pieces"
+            subtitle="Latest arrivals from our artisans"
+          />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {curatedProducts.map((product, index) => (
+              <ProductCard
+                key={product.id}
+                href={`/collections/${product.collectionId}/products/${product.id}`}
+                src={product.image}
+                alt={product.name}
+                name={product.name}
+                description={product.description}
+                price={product.price}
                 index={index}
               />
             ))}
