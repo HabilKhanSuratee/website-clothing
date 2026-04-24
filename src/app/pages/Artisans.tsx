@@ -2,29 +2,20 @@ import { motion } from "motion/react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { artisans } from "../data/collections";
+import { PageHero } from "../components/PageHero";
 
 export function Artisans() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-center mt-16">
-        <div className="absolute inset-0">
-          <motion.div
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full h-full"
-          >
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1588006324772-90fd2d83f522?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-              alt="Indonesian artisans"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-stone-900/60" />
-          </motion.div>
-        </div>
-
-        <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 w-full text-center">
+      <PageHero
+        src="https://images.unsplash.com/photo-1588006324772-90fd2d83f522?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+        alt="Indonesian artisans"
+        height="h-[60vh]"
+        overlay="bg-stone-900/60"
+        offsetTop
+      >
+        <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +29,7 @@ export function Artisans() {
             </p>
           </motion.div>
         </div>
-      </section>
+      </PageHero>
 
       {/* Artisans Grid */}
       <section className="py-24 px-6 lg:px-12">
