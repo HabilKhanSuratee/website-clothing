@@ -1,113 +1,74 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { collections, artisans } from "../data/collections";
+import { PageHero } from "../components/PageHero";
+import { SectionHeader } from "../components/SectionHeader";
+import { CollectionCard } from "../components/CollectionCard";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center">
-        <div className="absolute inset-0">
+      <PageHero
+        src="https://images.unsplash.com/photo-1641565352066-8e0958c6ba0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+        alt="Indonesian batik fashion"
+        height="h-screen"
+      >
+        <div className="max-w-xl">
           <motion.div
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full h-full"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1641565352066-8e0958c6ba0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-              alt="Indonesian batik fashion"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-stone-900/80 via-stone-900/50 to-transparent" />
+            <h1 className="text-6xl lg:text-7xl mb-6 tracking-tight leading-[1.1] text-white">
+              Traditional Heritage<br />Meets Modern Fashion
+            </h1>
+            <p className="text-lg text-white/80 mb-8 leading-relaxed">
+              Discover authentic Indonesian textiles directly from master craftsmen
+            </p>
+            <div className="flex gap-4">
+              <Link to="/collections">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-brand-bg text-brand-text px-8 py-3.5 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
+                >
+                  Explore Collections
+                </motion.button>
+              </Link>
+              <Link to="/for-manufacturers">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="border border-white/30 text-white px-8 py-3.5 text-sm tracking-wide hover:bg-white/10 transition-colors"
+                >
+                  Register as Manufacturer
+                </motion.button>
+              </Link>
+            </div>
           </motion.div>
         </div>
-
-        <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 w-full">
-          <div className="max-w-xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <h1 className="text-6xl lg:text-7xl mb-6 tracking-tight leading-[1.1] text-white">
-                Traditional Heritage<br />Meets Modern Fashion
-              </h1>
-              <p className="text-lg text-white/80 mb-8 leading-relaxed">
-                Discover authentic Indonesian textiles directly from master craftsmen
-              </p>
-              <div className="flex gap-4">
-                <Link to="/collections">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="bg-brand-bg text-brand-text px-8 py-3.5 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
-                  >
-                    Explore Collections
-                  </motion.button>
-                </Link>
-                <Link to="/for-manufacturers">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="border border-white/30 text-white px-8 py-3.5 text-sm tracking-wide hover:bg-white/10 transition-colors"
-                  >
-                    Register as Manufacturer
-                  </motion.button>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      </PageHero>
 
       {/* Featured Collections */}
       <section id="collections" className="py-24 px-6 lg:px-12">
         <div className="max-w-[1920px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Featured Collections</h2>
-            <p className="text-brand-text-muted text-lg">Curated Indonesian craftsmanship, directly from our artisans</p>
-          </motion.div>
-
+          <SectionHeader
+            title="Featured Collections"
+            subtitle="Curated Indonesian craftsmanship, directly from our artisans"
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {collections.map((collection, index) => (
-              <Link key={collection.id} to={`/collections/${collection.id}`}>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="relative overflow-hidden mb-4 aspect-[3/4]">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.6 }}
-                      className="w-full h-full"
-                    >
-                      <ImageWithFallback
-                        src={collection.image}
-                        alt={collection.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </motion.div>
-                    <div className="absolute inset-0 bg-stone-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-white text-sm tracking-wide border border-white px-6 py-2">
-                        View Collection
-                      </span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl mb-2">{collection.title}</h3>
-                  <p className="text-brand-text-muted text-sm">{collection.description}</p>
-                </motion.div>
-              </Link>
+              <CollectionCard
+                key={collection.id}
+                href={`/collections/${collection.id}`}
+                src={collection.image}
+                alt={collection.title}
+                title={collection.title}
+                description={collection.description}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -174,17 +135,10 @@ export function Home() {
       {/* Manufacturers Showcase */}
       <section id="manufacturers" className="py-24 px-6 lg:px-12">
         <div className="max-w-[1920px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Featured Artisans</h2>
-            <p className="text-brand-text-muted text-lg">Master craftspeople preserving Indonesian textile heritage</p>
-          </motion.div>
-
+          <SectionHeader
+            title="Featured Artisans"
+            subtitle="Master craftspeople preserving Indonesian textile heritage"
+          />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {artisans.map((artisan, index) => (
               <Link key={artisan.id} to={`/artisans/${artisan.id}`}>

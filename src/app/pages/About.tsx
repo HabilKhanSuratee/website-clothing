@@ -1,44 +1,34 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { PageHero } from "../components/PageHero";
+import { SectionHeader } from "../components/SectionHeader";
 
 export function About() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[70vh] flex items-center mt-16">
-        <div className="absolute inset-0">
-          <motion.div
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full h-full"
-          >
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1761516659497-8478e39d2b26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-              alt="Indonesian textiles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-stone-900/80 via-stone-900/60 to-transparent" />
-          </motion.div>
-        </div>
-
-        <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-2xl"
-          >
-            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight leading-tight text-white">
-              Preserving Heritage, Empowering Artisans
-            </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              Connecting Indonesia's master textile craftspeople directly with a global community that values authentic, handmade fashion
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        src="https://images.unsplash.com/photo-1761516659497-8478e39d2b26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+        alt="Indonesian textiles"
+        height="h-[70vh]"
+        overlay="bg-gradient-to-r from-stone-900/80 via-stone-900/60 to-transparent"
+        offsetTop
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="max-w-2xl"
+        >
+          <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight leading-tight text-white">
+            Preserving Heritage, Empowering Artisans
+          </h1>
+          <p className="text-xl text-white/80 leading-relaxed">
+            Connecting Indonesia's master textile craftspeople directly with a global community that values authentic, handmade fashion
+          </p>
+        </motion.div>
+      </PageHero>
 
       {/* Our Mission */}
       <section className="py-24 px-6 lg:px-12">
@@ -79,18 +69,12 @@ export function About() {
       {/* Indonesian Textile Heritage */}
       <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1400px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16 text-center max-w-3xl mx-auto"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">Indonesian Textile Traditions</h2>
-            <p className="text-brand-text-muted text-lg">
-              Indonesia's textile heritage spans over 2,000 years, with each island developing unique techniques and symbolic patterns
-            </p>
-          </motion.div>
+          <SectionHeader
+            title="Indonesian Textile Traditions"
+            subtitle="Indonesia's textile heritage spans over 2,000 years, with each island developing unique techniques and symbolic patterns"
+            align="center"
+            className="max-w-3xl mx-auto"
+          />
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -130,18 +114,11 @@ export function About() {
       {/* How It Works */}
       <section className="py-24 px-6 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16 text-center"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">How Nusantara Works</h2>
-            <p className="text-brand-text-muted text-lg max-w-2xl mx-auto">
-              A transparent platform connecting artisans directly with customers
-            </p>
-          </motion.div>
+          <SectionHeader
+            title="How Nusantara Works"
+            subtitle="A transparent platform connecting artisans directly with customers"
+            align="center"
+          />
 
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <motion.div

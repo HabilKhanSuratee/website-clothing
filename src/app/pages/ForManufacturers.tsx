@@ -2,67 +2,50 @@ import { motion } from "motion/react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Check } from "lucide-react";
+import { PageHero } from "../components/PageHero";
+import { SectionHeader } from "../components/SectionHeader";
 
 export function ForManufacturers() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[80vh] flex items-center mt-16">
-        <div className="absolute inset-0">
-          <motion.div
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full h-full"
+      <PageHero
+        src="https://images.unsplash.com/photo-1588006324772-90fd2d83f522?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+        alt="Indonesian artisan at work"
+        height="h-[80vh]"
+        overlay="bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-stone-900/40"
+        offsetTop
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="max-w-2xl"
+        >
+          <h1 className="text-5xl lg:text-7xl mb-6 tracking-tight leading-[1.1] text-white">
+            Sell Your Craft<br />Directly to the World
+          </h1>
+          <p className="text-xl text-white/80 leading-relaxed mb-8">
+            Join Indonesia's premier direct-to-consumer platform for traditional textiles. Keep your margins, tell your story, reach global customers.
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-brand-btn-text text-brand-btn px-12 py-4 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
           >
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1588006324772-90fd2d83f522?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-              alt="Indonesian artisan at work"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-stone-900/40" />
-          </motion.div>
-        </div>
-
-        <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-2xl"
-          >
-            <h1 className="text-5xl lg:text-7xl mb-6 tracking-tight leading-[1.1] text-white">
-              Sell Your Craft<br />Directly to the World
-            </h1>
-            <p className="text-xl text-white/80 leading-relaxed mb-8">
-              Join Indonesia's premier direct-to-consumer platform for traditional textiles. Keep your margins, tell your story, reach global customers.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-brand-btn-text text-brand-btn px-12 py-4 text-sm tracking-wide hover:bg-brand-bg-alt transition-colors"
-            >
-              Apply Now
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
+            Apply Now
+          </motion.button>
+        </motion.div>
+      </PageHero>
 
       {/* Why Join */}
       <section className="py-24 px-6 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16 text-center"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">Why Manufacturers Choose Nusantara</h2>
-            <p className="text-brand-text-muted text-lg max-w-2xl mx-auto">
-              Built specifically for Indonesian textile artisans who want to grow their business globally
-            </p>
-          </motion.div>
+          <SectionHeader
+            title="Why Manufacturers Choose Nusantara"
+            subtitle="Built specifically for Indonesian textile artisans who want to grow their business globally"
+            align="center"
+          />
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -102,16 +85,10 @@ export function ForManufacturers() {
       {/* How It Works */}
       <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1400px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Getting Started is Simple</h2>
-            <p className="text-brand-text-muted text-lg">From application to first sale in as little as one week</p>
-          </motion.div>
+          <SectionHeader
+            title="Getting Started is Simple"
+            subtitle="From application to first sale in as little as one week"
+          />
 
           <div className="space-y-8">
             {[
@@ -222,18 +199,11 @@ export function ForManufacturers() {
       {/* Requirements */}
       <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1000px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-12 text-center"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-6 tracking-tight">Who Can Apply?</h2>
-            <p className="text-brand-text-muted text-lg">
-              We partner with verified Indonesian textile manufacturers and artisans
-            </p>
-          </motion.div>
+          <SectionHeader
+            title="Who Can Apply?"
+            subtitle="We partner with verified Indonesian textile manufacturers and artisans"
+            align="center"
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -2,6 +2,9 @@ import { motion } from "motion/react";
 import { useParams, Link, Navigate } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { artisans, collections } from "../data/collections";
+import { PageHero } from "../components/PageHero";
+import { SectionHeader } from "../components/SectionHeader";
+import { CollectionCard } from "../components/CollectionCard";
 
 export function ArtisanProfile() {
   const { id } = useParams();
@@ -18,51 +21,41 @@ export function ArtisanProfile() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[80vh] flex items-end mt-16">
-        <div className="absolute inset-0">
-          <motion.div
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full h-full"
-          >
-            <ImageWithFallback
-              src={artisan.image}
-              alt={artisan.name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-transparent" />
-          </motion.div>
-        </div>
-
-        <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 w-full pb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-3xl"
-          >
-            <p className="text-white/60 text-sm tracking-wide mb-4">MASTER ARTISAN</p>
-            <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight text-white">
-              {artisan.name}
-            </h1>
-            <div className="flex gap-8 text-lg mb-8">
-              <div>
-                <p className="text-white/50 mb-1 text-sm">Location</p>
-                <p className="text-white">{artisan.location}</p>
-              </div>
-              <div>
-                <p className="text-white/50 mb-1 text-sm">Specialty</p>
-                <p className="text-white">{artisan.specialty}</p>
-              </div>
-              <div>
-                <p className="text-white/50 mb-1 text-sm">Established</p>
-                <p className="text-white">{artisan.establishedYear}</p>
-              </div>
+      <PageHero
+        src={artisan.image}
+        alt={artisan.name}
+        height="h-[80vh]"
+        overlay="bg-gradient-to-t from-stone-900 via-stone-900/60 to-transparent"
+        itemsAlign="end"
+        offsetTop
+        contentPb="pb-20"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="max-w-3xl"
+        >
+          <p className="text-white/60 text-sm tracking-wide mb-4">MASTER ARTISAN</p>
+          <h1 className="text-5xl lg:text-6xl mb-6 tracking-tight text-white">
+            {artisan.name}
+          </h1>
+          <div className="flex gap-8 text-lg mb-8">
+            <div>
+              <p className="text-white/50 mb-1 text-sm">Location</p>
+              <p className="text-white">{artisan.location}</p>
             </div>
-          </motion.div>
-        </div>
-      </section>
+            <div>
+              <p className="text-white/50 mb-1 text-sm">Specialty</p>
+              <p className="text-white">{artisan.specialty}</p>
+            </div>
+            <div>
+              <p className="text-white/50 mb-1 text-sm">Established</p>
+              <p className="text-white">{artisan.establishedYear}</p>
+            </div>
+          </div>
+        </motion.div>
+      </PageHero>
 
       {/* Biography */}
       <section className="py-24 px-6 lg:px-12">
@@ -118,38 +111,21 @@ export function ArtisanProfile() {
       {/* Collections by this Artisan */}
       <section className="py-24 px-6 lg:px-12 bg-brand-bg-alt">
         <div className="max-w-[1920px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Collections</h2>
-            <p className="text-brand-text-muted text-lg">Explore the work of {artisan.name}</p>
-          </motion.div>
-
+          <SectionHeader
+            title="Collections"
+            subtitle={`Explore the work of ${artisan.name}`}
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {artisanCollections.map((collection, index) => (
-              <Link key={collection.id} to={`/collections/${collection.id}`}>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="relative overflow-hidden mb-4 aspect-[3/4]">
-                    <ImageWithFallback
-                      src={collection.image}
-                      alt={collection.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <h3 className="text-xl mb-2">{collection.title}</h3>
-                  <p className="text-brand-text-muted text-sm">{collection.description}</p>
-                </motion.div>
-              </Link>
+              <CollectionCard
+                key={collection.id}
+                href={`/collections/${collection.id}`}
+                src={collection.image}
+                alt={collection.title}
+                title={collection.title}
+                description={collection.description}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -158,16 +134,7 @@ export function ArtisanProfile() {
       {/* Other Artisans */}
       <section className="py-24 px-6 lg:px-12">
         <div className="max-w-[1920px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">Other Master Artisans</h2>
-          </motion.div>
-
+          <SectionHeader title="Other Master Artisans" />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {artisans
               .filter(a => a.id !== artisan.id)

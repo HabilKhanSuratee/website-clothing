@@ -4,6 +4,8 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { collections, artisans } from "../data/collections";
 import { Heart, ShoppingBag, CheckCircle, Package, RefreshCw, Shield } from "lucide-react";
 import { useState } from "react";
+import { SectionHeader } from "../components/SectionHeader";
+import { ProductCard } from "../components/ProductCard";
 
 export function ProductDetail() {
   const { collectionId, productId } = useParams();
@@ -256,40 +258,22 @@ export function ProductDetail() {
       {/* Related Products */}
       <section className="py-24 px-6 lg:px-12">
         <div className="max-w-[1920px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl mb-4 tracking-tight">You May Also Like</h2>
-          </motion.div>
-
+          <SectionHeader title="You May Also Like" />
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {collection.products
               ?.filter(p => p.id !== product.id)
               .slice(0, 4)
               .map((relatedProduct, index) => (
-                <Link key={relatedProduct.id} to={`/collections/${collection.id}/products/${relatedProduct.id}`}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group"
-                  >
-                    <div className="relative overflow-hidden mb-4 aspect-[3/4] bg-brand-thumbnail">
-                      <ImageWithFallback
-                        src={relatedProduct.image}
-                        alt={relatedProduct.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <h3 className="mb-2">{relatedProduct.name}</h3>
-                    <p className="text-xl">Rp {relatedProduct.price.toLocaleString('id-ID')}</p>
-                  </motion.div>
-                </Link>
+                <ProductCard
+                  key={relatedProduct.id}
+                  href={`/collections/${collection.id}/products/${relatedProduct.id}`}
+                  src={relatedProduct.image}
+                  alt={relatedProduct.name}
+                  name={relatedProduct.name}
+                  price={relatedProduct.price}
+                  index={index}
+                  variant="minimal"
+                />
               ))}
           </div>
         </div>
